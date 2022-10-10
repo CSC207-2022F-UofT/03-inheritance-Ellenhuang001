@@ -7,6 +7,7 @@
  */
 
 /*
+
  * TODO: Create a public class named CrossbodyBag which is a subclass of Bag
  *       In addition to the attributes in Bag, the CrossbodyBag should have an
  *       attribute named "numberOfStraps".
@@ -30,3 +31,24 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag{
+
+    int numberOfStraps;
+    CrossbodyBag(String c, int cap, int strap){
+        super(c, cap);
+        this.numberOfStraps = strap;
+    }
+
+    public int getNumberOfStraps(){
+        return numberOfStraps;
+    }
+    @Override
+    public String toString(){
+        return this.getColor()+" Crossbody Bag with "+ this.numberOfStraps+ " straps (" + this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
+    }
+    @Override
+    public void enhance(){
+        super.increaseCapacity(2);
+    }
+}
